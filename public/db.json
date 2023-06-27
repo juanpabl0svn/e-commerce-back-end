@@ -1,0 +1,50 @@
+[
+  {
+    "product": "Camera",
+    "image": "http://www.localhost:3000/images/camera.jpeg"
+  },
+  {
+    "product": "Bed",
+    "image": "http://www.localhost:3000/images/bed.jpeg"
+  },
+  {
+    "product": "Ipad",
+    "image": "http://www.localhost:3000/images/ipad.jpeg"
+  },
+  {
+    "product": "Iphone",
+    "image": "http://www.localhost:3000/images/iphone.jpeg"
+  },
+  {
+    "product": "Iphone",
+    "image": "http://www.localhost:3000/images/iphone.jpeg"
+  },
+  {
+    "product": "Iphone",
+    "image": "http://www.localhost:3000/images/iphone.jpeg"
+  },
+  {
+    "product": "Iphone",
+    "image": "http://www.localhost:3000/images/iphone.jpeg"
+  },
+  {
+    "product": "Iphone",
+    "image": "http://www.localhost:3000/images/iphone.jpeg"
+  },
+  {
+    "product": "Iphone",
+    "image": "http://www.localhost:3000/images/iphone.jpeg"
+  },
+  {
+    "product": "Iphone",
+    "image": "http://www.localhost:3000/images/iphone.jpeg"
+  },
+  {
+    "product": "Iphone",
+    "image": "http://www.localhost:3000/images/iphone.jpeg"
+  },
+  {
+    "product": "Iphone",
+    "image": "http://www.localhost:3000/images/iphone.jpeg"
+  }
+]
