@@ -1,50 +1,74 @@
 [
   {
     "product": "Camera",
-    "image": "http://www.localhost:3000/images/camera.jpeg"
+    "image": "http://www.localhost:3000/images/camera.jpeg",
+    "price": 2000,
+    "units": 20
   },
   {
     "product": "Bed",
-    "image": "http://www.localhost:3000/images/bed.jpeg"
+    "image": "http://www.localhost:3000/images/bed.jpeg",
+    "price": 1000,
+    "units": 6
   },
   {
     "product": "Ipad",
-    "image": "http://www.localhost:3000/images/ipad.jpeg"
+    "image": "http://www.localhost:3000/images/ipad.jpeg",
+    "price": 999,
+    "units": 0
+  },
+  {
+    "product": "Laptop",
+    "image": "http://www.localhost:3000/images/laptop.jpeg",
+    "price": 960,
+    "units": 32
   },
   {
     "product": "Iphone",
-    "image": "http://www.localhost:3000/images/iphone.jpeg"
+    "image": "http://www.localhost:3000/images/iphone.jpeg",
+    "price": 1100,
+    "units": 17
   },
   {
-    "product": "Iphone",
-    "image": "http://www.localhost:3000/images/iphone.jpeg"
+    "product": "Table",
+    "image": "http://www.localhost:3000/images/table.jpeg",
+    "price": 200,
+    "units": 37
   },
   {
-    "product": "Iphone",
-    "image": "http://www.localhost:3000/images/iphone.jpeg"
+    "product": "Mouse Gamer",
+    "image": "http://www.localhost:3000/images/mouse_gamer.jpeg",
+    "price": 45,
+    "units": 13
   },
   {
-    "product": "Iphone",
-    "image": "http://www.localhost:3000/images/iphone.jpeg"
+    "product": "Tv",
+    "image": "http://www.localhost:3000/images/tv.jpeg",
+    "price": 15000,
+    "units": 18
   },
   {
-    "product": "Iphone",
-    "image": "http://www.localhost:3000/images/iphone.jpeg"
+    "product": "MacBook",
+    "image": "http://www.localhost:3000/images/macbook.jpeg",
+    "price": 1700,
+    "units": 10
   },
   {
-    "product": "Iphone",
-    "image": "http://www.localhost:3000/images/iphone.jpeg"
+    "product": "Chair",
+    "image": "http://www.localhost:3000/images/chair.jpeg",
+    "price": 35,
+    "units": 14
   },
   {
-    "product": "Iphone",
-    "image": "http://www.localhost:3000/images/iphone.jpeg"
+    "product": "Sofa",
+    "image": "http://www.localhost:3000/images/sofa.jpeg",
+    "price": 15000,
+    "units": 10
   },
   {
-    "product": "Iphone",
-    "image": "http://www.localhost:3000/images/iphone.jpeg"
-  },
-  {
-    "product": "Iphone",
-    "image": "http://www.localhost:3000/images/iphone.jpeg"
+    "product": "Apple watch",
+    "image": "http://www.localhost:3000/images/apple_watch.jpeg",
+    "price": 15000,
+    "units": 10
   }
 ]

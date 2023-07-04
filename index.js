@@ -18,6 +18,4 @@ app.get("/", (req,res)=>{
     res.sendFile(path.join(__dirname, "public","images"))
 })
 
-console.log(__dirname + "public\\images")
-
 app.listen(PORT, console.log(`Listening on port ${PORT}`));
