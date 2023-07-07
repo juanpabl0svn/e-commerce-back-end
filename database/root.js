@@ -11,8 +11,8 @@ const connect = () => {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     })
-    .then(() => console.log("Connect"))
-    .catch((err) => console.log(err));
+    .then(() => console.log("Connected"))
+    .catch((err) => console.log(`Something went wrong ${err}`));
 };
 connect()
 

@@ -3,7 +3,7 @@ import express from "express";
 import cors from "cors";
 import path from "path";
 import morgan from "morgan";
-import connect from '../database/root.js';
+import '../database/root.js';
 import router from "./routes/router.js";
 
 const __filename = url.fileURLToPath(import.meta.url);

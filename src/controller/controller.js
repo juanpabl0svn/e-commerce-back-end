@@ -5,18 +5,13 @@ export async function getProducts(req,res){
     res.send(products)
 }
 
-export async function getProduct({id}){
+export async function getProductById(id){
     const product = await productsModel.findById(id)
     return product
 }
-export function buyProducts(req,res){
-    const {elements} = req.body
 
-    elements.forEach(async(elements) => {
-        const unitsAsked = el
-        const unitsAvailable = getProduct(el)
-        if (units){}
-        const document = await productsModel.findOneAndUpdate()
-
-    })
+export async function getProduct(req,res){
+    const {id} = req.params
+    const product = await getProductById(id)
+    res.json(product)
 }
