@@ -14,6 +14,7 @@ const connect = () => {
     .then(() => console.log("Connected"))
     .catch((err) => console.log(`Something went wrong ${err}`));
 };
+
 connect()
 
 export default connect;
