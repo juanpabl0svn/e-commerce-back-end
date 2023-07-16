@@ -3,7 +3,7 @@ import {
   getProducts,
   getProduct,
   createUser,
-  getUser
+  getUser,
 } from "../controller/controller.js";
 
 const router = Router();
@@ -15,5 +15,7 @@ router.get("/products/:id", getProduct);
 router.post('/user',getUser)
 
 router.post('/account',createUser)
+
+// router.get('/createall',createDataBase)
 
 export default router;
