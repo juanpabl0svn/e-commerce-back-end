@@ -16,6 +16,9 @@ router.post('/user',getUser)
 
 router.post('/account',createUser)
 
+// Middleware.
+// router.use((req,res,next)=>{})
+
 // router.get('/createall',createDataBase)
 
 export default router;
