@@ -11,6 +11,14 @@ export async function getProductById(id) {
   return product;
 }
 
+export async function getUserData({username,password}){
+  return await usersModel.findOne({username,password});
+}
+
+export async function userExists(username){
+  return await usersModel.findOne({username});
+}
+
 export async function getProduct(req, res) {
   const { id } = req.params;
   const product = await getProductById(id);
@@ -28,8 +36,8 @@ export async function createUser(req, res) {
 }
 
 export async function getUser(req, res) {
-  const { username,password } = req.body;
-  const user = await usersModel.findOne({username,password});
+  const { username } = req.body;
+  const user = await getUserData(req.body)
 
   if (user != null) {
     const token = createJWT({ username });
@@ -41,14 +49,19 @@ export async function getUser(req, res) {
   return res.status(403).json({ error: "Something wrong" });
 }
 
-export function checkJWT(req,res){
-  const token = req.headers.authorization.split(" ")[1];
-  jwt.verify(token, process.env.JWT_SECRET, (err, decoded) => {
-    if (err) {
-      return res.status(403).json({ error: "Invalid token" });
+export async function logIn(req,res){
+  const {token,username} = req.headers
+  const check = createJWT(token)
+  if (check != null){
+    try{
+      const exist = await userExists(username)
+
+      res.status(200).json({token,username})
+    }catch(error){
+      console.log(error)
     }
-    return res.status(200).json(decoded);
-  });
+  }
+
 }
 
 

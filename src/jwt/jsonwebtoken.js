@@ -8,5 +8,10 @@ export default function createJWT(user) {
 }
 
 export function checkJWT(token){
-  return jwt.verify(token, process.env.JWT_SECRET);
+  return jwt.verify(token, process.env.JWT_SECRET,(err, decoded) => {
+    if (err) {
+      return null
+    }
+    return decoded;
+  });
 }
