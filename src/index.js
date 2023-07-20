@@ -7,7 +7,6 @@ import "../database/root.js";
 import router from "./routes/router.js";
 import bodyParser from "body-parser";
 
-const __filename = url.fileURLToPath(import.meta.url);
 export const __dirname = url.fileURLToPath(new URL(".", import.meta.url));
 
 const app = express();
@@ -15,7 +14,7 @@ const PORT = 3000;
 
 app.use(cors());
 app.use(morgan("dev"));
-app.use(bodyParser.json())
+app.use(bodyParser.json())  
 app.use(express.json())
 app.use(router);
 app.use(express.static(path.join(__dirname, "..", "public")));

@@ -4,7 +4,8 @@ import {
   getProduct,
   createUser,
   getUser,
-  logIn
+  logIn,
+  createDatabase
 } from "../controller/controller.js";
 
 const router = Router();
@@ -18,6 +19,8 @@ router.get('/login',logIn)
 router.post('/user',getUser)
 
 router.post('/account',createUser)
+
+router.get('/create',createDatabase)
 
 
 export default router;

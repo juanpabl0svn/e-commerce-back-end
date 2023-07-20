@@ -20,6 +20,9 @@ const productScheme = new mongoose.Schema(
     comments: {
       type: Array,
     },
+    ranking: {
+      type: Array,
+    }
   },
   { timestamps: true, versionKey: false }
 );
