@@ -5,7 +5,8 @@ import {
   createUser,
   getUser,
   logIn,
-  createDatabase
+  createDatabase,
+  createComment
 } from "../controller/controller.js";
 
 const router = Router();
@@ -19,6 +20,8 @@ router.get('/login',logIn)
 router.post('/user',getUser)
 
 router.post('/account',createUser)
+
+router.post('/comment',createComment)
 
 router.get('/create',createDatabase)
 

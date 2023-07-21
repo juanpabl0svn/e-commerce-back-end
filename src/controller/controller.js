@@ -12,12 +12,12 @@ export async function getProductById(id) {
   return product;
 }
 
-export async function getUserData({username,password}){
-  return await usersModel.findOne({username,password});
+export async function getUserData({ username, password }) {
+  return await usersModel.findOne({ username, password });
 }
 
-export async function userExists(username){
-  return await usersModel.findOne({username});
+export async function userExists(username) {
+  return await usersModel.findOne({ username });
 }
 
 export async function getProduct(req, res) {
@@ -38,7 +38,7 @@ export async function createUser(req, res) {
 
 export async function getUser(req, res) {
   const { username } = req.body;
-  const user = await getUserData(req.body)
+  const user = await getUserData(req.body);
 
   if (user != null) {
     const token = createJWT({ username });
@@ -50,36 +50,48 @@ export async function getUser(req, res) {
   return res.status(403).json({ error: "Something wrong" });
 }
 
-export async function logIn(req,res){
-  const {token,username} = req.headers
-  const check = createJWT(token)
-  if (check != null){
-    try{
-      const exist = await userExists(username)
+export async function logIn(req, res) {
+  const { token, username } = req.headers;
+  const check = createJWT(token);
+  if (check != null) {
+    try {
+      const exist = await userExists(username);
 
-      console.log(exist)
+      console.log(exist);
 
-      res.status(200).json({token,username})
-    }catch(error){
-      console.log(error)
+      res.status(200).json({ token, username });
+    } catch (error) {
+      console.log(error);
     }
   }
-
 }
 
-export async function createDatabase(req,res){
+export async function createComment(req, res) {
+  const { username, _id, message } = req.body;
 
-  const request = await fetch('http://localhost:3000/db.json')
-  const response = await request.json()
-  console.log(response)
-
-  const data = await productsModel.insertMany(response)
-
-  res.send(data)
-
+  const data = await productsModel.updateOne(
+    { _id },
+    {
+      $push: {
+        comments: {
+          username,
+          message,
+        },
+      },
+    }
+  );
+  res.send(data);
 }
 
+export async function createDatabase(req, res) {
+  const request = await fetch("http://localhost:3000/db.json");
+  const response = await request.json();
+  console.log(response);
 
+  const data = await productsModel.insertMany(response);
+
+  res.send(data);
+}
 
 // export async function createDataBase(req, res) {
 //   const request = await fetch("http://localhost:3000/db.json");
