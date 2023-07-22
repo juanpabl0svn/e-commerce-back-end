@@ -86,8 +86,8 @@
     "price": 35,
     "units": 14,
     "description": "Chair made of oak wood with an amazing design to give a nature touch in your house or space.",
-    "ranking":[],
-    "comments": [3,2]
+    "ranking":[3,2],
+    "comments": []
   },
   {
     "name": "Sofa",

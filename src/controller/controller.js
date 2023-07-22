@@ -3,7 +3,6 @@ import createJWT from "../jwt/jsonwebtoken.js";
 
 export async function getProducts(req, res) {
   const products = await productsModel.find({});
-  console.log(products);
   return res.send(products);
 }
 
@@ -13,7 +12,7 @@ export async function getProductById(id) {
 }
 
 export async function getUserData({ username, password }) {
-  return await usersModel.findOne({ username, password });
+  return await usersModel.find({ username, password });
 }
 
 export async function userExists(username) {
@@ -54,15 +53,13 @@ export async function logIn(req, res) {
   const { token, username } = req.headers;
   const check = createJWT(token);
   if (check != null) {
-    try {
       const exist = await userExists(username);
 
-      console.log(exist);
+      if (exist){
+        return res.status(200).json({username,token})
+      }
 
-      res.status(200).json({ token, username });
-    } catch (error) {
-      console.log(error);
-    }
+      res.status(404)
   }
 }
 
@@ -80,7 +77,7 @@ export async function createComment(req, res) {
       },
     }
   );
-  res.send(data);
+  res.json({username,message});
 }
 
 export async function createDatabase(req, res) {
