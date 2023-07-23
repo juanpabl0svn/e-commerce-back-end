@@ -1,5 +1,5 @@
 import productsModel, { usersModel } from "../../database/schema.js";
-import createJWT from "../jwt/jsonwebtoken.js";
+import createJWT, { checkJWT } from "../jwt/jsonwebtoken.js";
 
 export async function getProducts(req, res) {
   const products = await productsModel.find({});
@@ -51,7 +51,7 @@ export async function getUser(req, res) {
 
 export async function logIn(req, res) {
   const { token, username } = req.headers;
-  const check = createJWT(token);
+  const check = checkJWT(token);
   if (check != null) {
       const exist = await userExists(username);
 
@@ -59,14 +59,14 @@ export async function logIn(req, res) {
         return res.status(200).json({username,token})
       }
 
-      res.status(404)
+      res.status(404).send(null)
   }
 }
 
 export async function createComment(req, res) {
   const { username, _id, message } = req.body;
 
-  const data = await productsModel.updateOne(
+  await productsModel.updateOne(
     { _id },
     {
       $push: {
